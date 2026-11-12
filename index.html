@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Com Carinho,Luca! &#10084; </title>
+
+	<link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+	<!--<button id="playButton">Clique para Tocar</button>
+  <audio id="myAudio" >
+    <source src="/musica/ANAVITÓRIA, Jorge & Mateus - Geleira do tempo.mp3" type="audio/mpeg">
+    Seu navegador não suporta a reprodução de áudio.
+  </audio> -->
+
+    <!--Adicione a tag de áudio para reproduzir a música --> 
+  <!-- <audio controls autoplay>
+        <source src="musica/ANAVITÓRIA, Jorge & Mateus - Geleira do tempo.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>-->
+
+    <div id="perspectiva">
+        <div id="contenedor">
+            <div class="cara frontal">
+                <h1>Para a moça mais linda da minha vida, minha princesa!!<br><span>Desça a página ↓</span></h1>
+            </div>
+            <div class="cara trasera">
+                <div id="abrir"></div>
+                <div id="partes"></div>
+                <div id="carta">
+                    <hgroup>
+                        <h1>Brasilia, 12 de Novembro de 2026</h1>
+                    </hgroup>
+                    <p> Querida Mariany de Farias,<br> 
+						Já se passaram dois anos desde que começamos a partilhar a nossa vida um com o outro, e olhar para trás me faz ver o tamanho desse sentimento que construímos juntos. 
+						Olhar para você ainda me traz aquele sorriso bobo e a certeza de que cada instante ao seu lado é um presente.
+    <br/>
+Quero celebrar os nossos dois anos de história e colecionar mais um momento inesquecível com você. 
+Aceita ser meu par em um jantar muito especial logo mais?
+						 <br/>
+<br/>
+<strong>Local:</strong> Surpresa 🤫
+<br/>
+<strong> Horário:</strong> 19 Horas
+<br/>
+<strong>Dress code</strong> Algo não muito formal, mas belo ✨
+						<br/>
+
+						<br/>O mais belo sentimento é aquele que te leva a querer o ceu para o outro. 
+						<br/>
+						<br/>Com muito carinho, Luca Samuel &#10084;&#127801;
+						</p>
+                </div>
+            </div>
+        </div><!-- fin contenedor -->
+    </div>
+    <div id="wrapper"></div>
+
+    <!-- Adicione a biblioteca jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+	//const playButton = document.getElementById("playButton");
+    //const audio = document.getElementById("myAudio");
+
+    //playButton.addEventListener("click", function() {
+      //audio.play();
+
+        // Coloque o seu script jQuery aqui
+        $(window).scroll(function () {   
+       var scr = $(window).scrollTop(),
+       		C = $('#contenedor'),
+  	  		A = $('#abrir'),
+  	  		E = $('#carta'),
+					F = $('#carta hgroup h2'),
+  	  		P = $('#perspectiva');
+    
+    	// giro y abertura
+     	if (scr >= 100) {
+				C.css({
+					'transition':'all 1s',
+					'transform':'rotateY(180deg)'
+				});
+				A.css({
+					'transition':'all 1s .5s',
+					'transform':'rotateX(180deg)',
+					'z-index': '0'
+				});
+     	}
+     	// cerrado y giro
+     	else if (scr <= 100) {
+				C.css({
+					'transition':'all 1s .5s',
+					'transform':'rotateY(0deg)'
+				});
+				A.css({
+					'transition':'all 1s',
+					'transform':'rotateX(0deg)',
+					'z-index': '10'
+				});  
+     	}
+     	// Sobre trasladoY / carta
+     	if (scr >= 500) {
+				E.css({
+					'transition':'all .5s 1s',
+					'top':'-550px',
+					'height':'500px'
+				});
+     		P.css({
+     			'transition':'all 1s',
+     			'transform':'translateY(450px)'
+     		});
+				F.css({
+     			'transition':'all 1s',
+     			'transform':'rotateZ(180deg)'
+				});
+     	}
+     	// Sobre position original / guardado carta
+     	else if (scr <= 500) {
+				E.css({
+					'transition':'all .5s',
+					'top':'3px',
+					'height':'200px'
+				});
+     		P.css({
+     			'transform':'translateY(0px)'
+     		});
+				F.css({
+     			'transform':'rotateZ(0deg)'
+				});
+     	}
+	 }) ;
+    </script>
+</body>
+</html>
